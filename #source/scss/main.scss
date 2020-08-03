@@ -11,7 +11,7 @@
 }
 .content-container{
     margin: 0 auto;
-    max-width: 974px;
+    max-width: 1000px;
     padding: 0 15px;
 }
 .simple-btn{
@@ -44,7 +44,7 @@
 .menu{
     background-color: #fff;
     padding: 24px 0;
-    
+
     &__wrapper{
         display: flex;
         align-items: center;
@@ -67,10 +67,93 @@
             color: #828282;
         }
     }
+    &__buttons{
+        & > *{
+            margin-left: 25px;
+        }
+        & > :first-child{
+            margin-left: 0;
+        }
+    }
+}
+
+.sup-header{
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.links{
+    display: flex;
+    align-items: center;
+    &__item{
+        display: inline-block;
+        font-weight: normal;
+        font-size: 12px;
+        color: #828282;
+        margin-right: 20px;
+        
+        &-bold{
+            color: #000000;
+            font-weight: bold;
+        }
+    }
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.subscribe{
+    color:  #BDBDBD;
+    margin-left: 6px;
+    font-size: 20px;
+}
+
+.lang{
+    margin-left: 74px;
+    &__item{
+        border: 0;
+        outline: none;
+        background: none;
+        font-weight: 300;
+        font-size: 12px;
+        color: #000;
+
+        &_active{
+            font-weight: bold;
+        }
+    }
+}
+
+.tabs{
+    &__item{
+        padding: 5px 13px 7px 0;
+        font-weight: bold;
+        font-size: 12px;
+        color: #000;
+        border-radius: 10px 10px 0 0;
+        outline: none;
+        border: 0;
+
+        i{
+            color: inherit;
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+
+        &_active{
+            padding-left: 13px;
+            background-color: #fff;
+            color: #10DE50;
+        }
+    }
 }
 
 .main{
     background-color: #fff;
+    padding-bottom: 97px; 
     max-width: 1105px;
     margin: 0 auto;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
@@ -83,27 +166,75 @@
     grid-row-gap: 28px;
     grid-template-columns: repeat(4, 1fr);
 
-    &__description{
+    .article-item__description{
         margin-top: 14px;
+        margin-bottom: 0;
     }
+    
+    .article-item{
+        &:first-child{
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+
+            .article-item__img-container{
+                height: auto;
+                max-height: 88%;   /*Костыль с выравниванием картинок*/
+            }
+        }
+    }
+
+    .article-item__img-container{
+        height: 214px;
+    }
+
 }
 
 .article-item{
-    &:first-child{
-        grid-column: 1 / span 2;
-        grid-row: 1 / span 2;
-    }
     &__description{
         text-align: start;
         color: $description-color;
         font-weight: bold;
         font-size: 16px;
-        max-width: 95%;
+    }
+
+    &__img-container{
+        position: relative;
+        overflow: hidden;
+
+        &:hover .article-item__img{
+            transform: scale(1.1);
+        }
     }
 
     &__img{
         display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
         object-fit: cover;
+        object-position: center;
+        transition: transform .5s ease;
+    }
+
+    &__btn{
+        display: inline-block;
+        background-color: $btn-color;
+        color: $description-color;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 9px 13px 10px 16px;
+        position: absolute;
+        bottom: 17px;
+        right: 18px;
+        z-index: 10;
+
+        i{
+            font-size: 15px;
+            margin-left: 11px;
+            position: relative;
+            top: 2px;
+        }
     }
 }
 
@@ -130,10 +261,121 @@
     }
 
     &__title{
+        margin: 0;
         max-width: 525px;
         font-weight: bold;
         font-size: 28px;
         color: #fff;
         text-transform: none;
     }
+}
+.facebook-btn{
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 9px 20px 12px 35px;
+    background: #485A96;
+    box-shadow: 0px 2px 4px #061E6E;
+    border-radius: 5px;
+    position: relative;
+
+    i{  
+        left: 15px;
+        font-size: 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.email{
+    height: 35px;
+    display: flex;
+    &__input{
+        display: inline-block;
+        width: 195px;
+        padding: 9px 0 12px 12px;
+        background-color: #fff;
+        border-radius: 5px 0 0 5px;
+        color: #828282; 
+        font-weight: normal;
+        font-size: 12px;
+        height: 100%;
+        border: 0;
+        outline: none;
+    }
+    &__btn{
+        width: 40px;
+        background-color: #000;
+        border: 0;
+        outline: none;
+        border-radius: 0px 5px 5px 0px;
+        height: 100%;
+        i{
+            color: #FFFFFF;
+            line-height: 100%;
+        }
+    }
+}
+.recommendation{
+    &__title{
+        max-width: 265px;
+        padding: 0 10px;
+        margin: 60px auto 47px;
+        font-weight: bold;
+        font-size: 24px;
+        color: #000;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    &__article-item{
+        max-width: 233px;
+    }
+    &__description{
+        margin-top: 24px;
+    }
+
+    .article-item__img-container{
+        height: 170px;
+    }
+}
+
+.footer{
+    border-top: 1px solid #DADADA;
+    background-color: #F2F2F2;
+    padding: 20px 0;
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+    }
+    &__link{
+        font-weight: 600;
+        font-size: 13px;
+        color: $link-color;
+        margin-right: 22px;
+
+        &:nth-child(4){
+            margin-left: 200px;
+        }
+
+        i{
+            font-size: 25px;
+            
+            &.fa-facebook-square:hover{
+                color: #3b5998;
+            }
+        }
+    }
+}
+
+.logo-container{
+    margin-right: 30px;
+}
+.logo{
+    position: relative;
+    left: -20%;
 }

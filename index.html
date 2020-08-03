@@ -4,14 +4,31 @@
     <title>info-main</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=devise-width initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 <body>
     <header class="header">
-        <div class="tabs">
+        <div class="sup-header">
             <div class="container">
-                
+                <div class="sup-header__wrapper">
+                    <div class="tabs">
+                        <button class="tabs__item">Блог</button>
+                        <button class="tabs__item tabs__item_active"><i class="fas fa-fan"></i>Препарат</button>
+                    </div>
+                    <div class="wrapper">
+                        <div class="links">
+                            <a class="links__item" href="#">О нас</a>
+                            <a class="links__item links__item-bold" href="#">Контакты</a>
+                            <a class="subscribe" href="#"><i class="fab fa-youtube"></i></a>
+                            <a class="subscribe" href="#"><i class="fab fa-facebook-square"></i></a>
+                        </div>
+                        <div class="lang">
+                            <button class="lang__item lang__item_active">Рус</button>
+                            <button class="lang__item">Укр</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="menu">
@@ -34,33 +51,38 @@
         <section class="paragraphs">
             <article class="article-item">
                 <div class="article-item__img-container">
+                    <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
                     <img class="article-item__img" src="images/massage.jpg" alt="">
                 </div>
-                <h3 class="article-item__description paragraphs__description">Лечебный массаж спины: почему это необходимо?</h3>
+                <h3 class="article-item__description">Лечебный массаж спины: почему это необходимо?</h3>
             </article>
             <article class="article-item">
                 <div class="article-item__img-container">
+                    <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
                     <img class="article-item__img" src="images/massage2.jpg" alt="">
                 </div>
-                <h3 class="article-item__description paragraphs__description">Лечебный массаж спины это профилактика заболеваний</h3>
+                <h3 class="article-item__description">Лечебный массаж спины это профилактика заболеваний</h3>
             </article>
             <article class="article-item">
                 <div class="article-item__img-container">
+                    <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
                     <img class="article-item__img" src="images/run.jpg" alt="">
                 </div>
-                <h3 class="article-item__description paragraphs__description">15 причин ходить пешком хотя бы 15 минут в день</h3>
+                <h3 class="article-item__description">15 причин ходить пешком хотя бы 15 минут в день</h3>
             </article>
             <article class="article-item">
                 <div class="article-item__img-container">
+                    <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
                     <img class="article-item__img" src="images/pain.jpg" alt="">
                 </div>
-                <h3 class="article-item__description paragraphs__description">Первая помощь при вывихе: что можно и нельзя делать</h3>
+                <h3 class="article-item__description">Первая помощь при вывихе: что можно и нельзя делать</h3>
             </article>
             <article class="article-item">
                 <div class="article-item__img-container">
+                    <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
                     <img class="article-item__img" src="images/muscle.jpg" alt="">
                 </div>
-                <h3 class="article-item__description paragraphs__description">мышечные и суставные боли и воспаления</h3>
+                <h3 class="article-item__description">мышечные и суставные боли и воспаления</h3>
             </article>
         </section>
         <button class="loading">Загрузить еще</button>
@@ -68,9 +90,67 @@
             <div class="content-container">
                 <div class="follow__wrapper">
                     <h2 class="follow__title">Підпишіться, щоб отримувати корисну інформацію</h2>
+                    <a class="facebook-btn" href="#"><i class="fab fa-facebook-f"></i>Читать в Facebook</a>
+                    <form class="email">
+                        <input class="email__input" placeholder="Email"></input>
+                        <button class="email__btn"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="recommendation">
+            <h2 class="recommendation__title">Рекомендованное</h2>
+            <div class="content-container">
+                <div class="recommendation__wrapper">
+                    <article class="article-item recommendation__article-item">
+                        <div class="article-item__img-container">
+                            <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
+                            <img class="article-item__img" src="images/pain.jpg" alt="">
+                        </div>
+                        <h3 class="article-item__description recommendation__description">Сезонные капризы суставов</h3>
+                    </article>
+                    <article class="article-item recommendation__article-item">
+                        <div class="article-item__img-container">
+                            <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
+                            <img class="article-item__img" src="images/food.jpg" alt="">
+                        </div>
+                        <h3 class="article-item__description recommendation__description">Почему время от времени вам нужно голодать</h3>
+                    </article>
+                    <article class="article-item recommendation__article-item">
+                        <div class="article-item__img-container">
+                            <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
+                            <img class="article-item__img" src="images/food2.jpg" alt="">
+                        </div>
+                        <h3 class="article-item__description recommendation__description">9 продуктов для улучшения памяти</h3>
+                    </article>
+                    <article class="article-item recommendation__article-item">
+                        <div class="article-item__img-container">
+                            <a class="article-item__btn" href="#">Читать далее<i class="fas fa-long-arrow-alt-right"></i></a>
+                            <img class="article-item__img" src="images/run.jpg" alt="">
+                        </div>
+                        <h3 class="article-item__description recommendation__description">15 причин ходить пешком хотя бы 15 минут в день</h3>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="logo-container">
+                    <img class="logo" src="images/logo.svg" alt="">
+                </div>
+                <a class="footer__link" href="">О нас</a>
+                <a class="footer__link" href="">Умови використання</a>
+                <a class="footer__link" href="">Подписаться</a>
+                <a class="footer__link" href=""><i class="fab fa-facebook-square"></i></a>
+                <a class="footer__link" href="">Напишите нам</a>
+                <form class="email">
+                    <input class="email__input" placeholder="Email"></input>
+                    <button class="email__btn"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
