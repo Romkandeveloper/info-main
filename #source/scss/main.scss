@@ -2,48 +2,113 @@
 @import "base";  // Базовые настройки
 @import "vars";  // Переменные scss
 @import "fonts"; // Шрифты
-
+@import "btns"; //Кнопки
 
 .container{
     max-width: 1245px;
     padding: 0 15px;
     margin: 0 auto;
 }
+
 .content-container{
     margin: 0 auto;
     max-width: 1000px;
     padding: 0 15px;
 }
-.simple-btn{
-    padding: 11px 19px 15px 19px;
-    font-weight: normal;
-    font-size: 12px;
-    text-transform: capitalize;
-    color: #000;
 
-    background: #FFFFFF;
-    border: 1px solid #BDBDBD;
-    border-radius: 5px;     
+.wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.flex{
+    display: flex;
+    align-items: center; 
+}
+
+.sup-header{
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.tabs{
+    &__item{
+        padding: 5px 13px 7px 0;
+        font-weight: bold;
+        font-size: 12px;
+        color: #000;
+        border-radius: 10px 10px 0 0;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+
+        i{
+            color: inherit;
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+
+        &_active{
+            padding-left: 13px;
+            background-color: #fff;
+            color: #10DE50;
+            cursor: initial;
+        }
+    }
+}
+
+.links{
+    display: flex;
+    align-items: center;
 
     @media(max-width: 630px){
         &{
             display: none;
         }
     }
+
+    &__item{
+        display: inline-block;
+        font-weight: normal;
+        font-size: 12px;
+        color: #828282;
+        margin-right: 20px;
+        
+        &-bold{
+            color: #000000;
+            font-weight: bold;
+        }
+    }
 }
 
-.gradient-btn{
-    padding: 9px 22px 13px 22px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #fff;
+.subscribe{
+    color:  #BDBDBD;
+    margin-left: 6px;
+    font-size: 20px;
 
-    background: linear-gradient(90deg, #00D0D0 3.23%, #12EC34 86.1%);
-    box-shadow: 0px 2px 10px #008181;
-    border-radius: 5px;
+    &:hover{
+        color: darken($color: #BDBDBD, $amount: 30%);
+    }
+}
 
-    &-icon{
-        margin-left: 15px;
+.lang{
+    margin-left: 74px;
+    &__item{
+        border: 0;
+        outline: none;
+        background: none;
+        font-weight: 300;
+        font-size: 12px;
+        color: #000;
+        cursor: pointer;
+
+        &_active{
+            font-weight: bold;
+            cursor: initial;
+        }
     }
 }
 
@@ -78,10 +143,10 @@
         font-size: 16px;
         display: inline-block;
         margin-right: 30px;
-        color: #828282;
+        color: $link-color;
         transition: color .2s ease;
         &:hover{
-            color: darken($color: #828282, $amount: 50%)
+            color: darken($color: $link-color, $amount: 50%)
         }
 
         &-icon{
@@ -95,95 +160,6 @@
         }
         & > :first-child{
             margin-left: 0;
-        }
-    }
-}
-
-.sup-header{
-    &__wrapper{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-.links{
-    display: flex;
-    align-items: center;
-
-    @media(max-width: 630px){
-        &{
-            display: none;
-        }
-    }
-
-    &__item{
-        display: inline-block;
-        font-weight: normal;
-        font-size: 12px;
-        color: #828282;
-        margin-right: 20px;
-        
-        &-bold{
-            color: #000000;
-            font-weight: bold;
-        }
-    }
-}
-.wrapper{
-    display: flex;
-    align-items: center;
-}
-
-.subscribe{
-    color:  #BDBDBD;
-    margin-left: 6px;
-    font-size: 20px;
-
-    &:hover{
-        color: darken($color: #BDBDBD, $amount: 30%);
-    }
-}
-
-.lang{
-    margin-left: 74px;
-    &__item{
-        border: 0;
-        outline: none;
-        background: none;
-        font-weight: 300;
-        font-size: 12px;
-        color: #000;
-        cursor: pointer;
-
-        &_active{
-            font-weight: bold;
-            cursor: initial;
-        }
-    }
-}
-
-.tabs{
-    &__item{
-        padding: 5px 13px 7px 0;
-        font-weight: bold;
-        font-size: 12px;
-        color: #000;
-        border-radius: 10px 10px 0 0;
-        outline: none;
-        border: 0;
-        cursor: pointer;
-
-        i{
-            color: inherit;
-            font-size: 1.1em;
-            margin-right: 5px;
-        }
-
-        &_active{
-            padding-left: 13px;
-            background-color: #fff;
-            color: #10DE50;
-            cursor: initial;
         }
     }
 }
@@ -221,7 +197,7 @@
     .article-item{
 
         &__img-container{
-            height: 214px;
+            height: $paragraph_image-height;
         }
 
         &:first-child{
@@ -241,6 +217,7 @@
             }
 
             .article-item__img-container{
+                min-height: 90%;
                 height: 527px;   /*Костыль с выравниванием картинок*/
             
                 @media(max-width:1020px){
@@ -319,8 +296,6 @@
         }
     }
 }
-
-
 
 .article-item{
     &__description{
@@ -479,55 +454,7 @@
         }
     }
 }
-.facebook-btn{
-    display: inline-block;
-    color: #fff;
-    font-weight: 600;
-    font-size: 12px;
-    padding: 9px 20px 12px 35px;
-    background: #485A96;
-    box-shadow: 0px 2px 4px #061E6E;
-    border-radius: 5px;
-    position: relative;
 
-    i{  
-        left: 15px;
-        font-size: 15px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-.email{
-    height: 35px;
-    display: flex;
-    &__input{
-        display: inline-block;
-        width: 195px;
-        padding: 9px 0 12px 12px;
-        background-color: #fff;
-        border-radius: 5px 0 0 5px;
-        color: #828282; 
-        font-weight: normal;
-        font-size: 12px;
-        height: 100%;
-        border: 0;
-        outline: none;
-    }
-
-    &__btn{
-        width: 40px;
-        background-color: #000;
-        border: 0;
-        outline: none;
-        border-radius: 0px 5px 5px 0px;
-        height: 100%;
-        i{
-            color: #FFFFFF;
-            line-height: 100%;
-        }
-    }
-}
 .recommendation{
     &__title{
         max-width: 265px;
@@ -555,7 +482,7 @@
         flex: 1 0 auto;
 
         &__img-container{
-            height: 170px;
+            height: $recommendation_image-height;
         }
         &__description{
             margin-top: 20px;
@@ -643,7 +570,7 @@
    }
 }
 
-.logo-container{
+.logo{
     margin-right: 30px;
 
     @media(max-width: 920px){
@@ -651,12 +578,10 @@
             display: none;   
         }
     }
-}
-.logo{
-    position: relative;
+
+    &__img{
+        position: relative;
     left: -20%;
+    }
 }
-.flex{
-    display: flex;
-    align-items: center; 
-}
+

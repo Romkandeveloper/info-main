@@ -1,0 +1,92 @@
+/* The button in the image is an element, so styled in its element in "main.scss" */
+
+.simple-btn{
+    padding: 11px 19px 15px 19px;
+    font-weight: normal;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #000;
+
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;     
+
+    @media(max-width: 630px){
+        &{
+            display: none;
+        }
+    }
+}
+
+.facebook-btn{
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 9px 20px 12px 35px;
+    background: #485A96;
+    box-shadow: 0px 2px 4px #061E6E;
+    border-radius: 5px;
+    position: relative;
+
+    i{  
+        left: 15px;
+        font-size: 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.email{
+    height: 35px;
+    display: flex;
+
+    &__input{
+        display: inline-block;
+        width: 195px;
+        padding: 9px 0 12px 12px;
+        background-color: #fff;
+        border-radius: 5px 0 0 5px;
+        color: #828282; 
+        font-weight: normal;
+        font-size: 12px;
+        height: 100%;
+        border: 0;
+        outline: none;
+
+        &:focus{
+            background-color: #000;
+            color: #eee;
+        }
+    }
+
+    &__btn{
+        width: 40px;
+        background-color: #000;
+        border: 0;
+        outline: none;
+        border-radius: 0px 5px 5px 0px;
+        height: 100%;
+        cursor: pointer;
+        i{
+            color: #FFFFFF;
+            line-height: 100%;
+        }
+    }
+}
+
+.gradient-btn{
+    padding: 9px 22px 13px 22px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+
+    background: linear-gradient(90deg, #00D0D0 3.23%, #12EC34 86.1%);
+    box-shadow: 0px 2px 10px #008181;
+    border-radius: 5px;
+
+    &-icon{
+        margin-left: 15px;
+    }
+}
