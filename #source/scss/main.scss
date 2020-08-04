@@ -24,6 +24,12 @@
     background: #FFFFFF;
     border: 1px solid #BDBDBD;
     border-radius: 5px;     
+
+    @media(max-width: 630px){
+        &{
+            display: none;
+        }
+    }
 }
 
 .gradient-btn{
@@ -49,10 +55,22 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media(max-width:950px){
+            &{
+                justify-content: flex-end;
+            }
+        }
     }
 
     &__list{
         list-style: none;
+
+        @media(max-width:950px){
+            &{
+                display: none;
+            }
+        }
     }
 
     &__item{
@@ -87,6 +105,13 @@
 .links{
     display: flex;
     align-items: center;
+
+    @media(max-width: 630px){
+        &{
+            display: none;
+        }
+    }
+
     &__item{
         display: inline-block;
         font-weight: normal;
@@ -153,10 +178,14 @@
 
 .main{
     background-color: #fff;
-    padding-bottom: 97px; 
+    padding-bottom: 62px; 
     max-width: 1105px;
     margin: 0 auto;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+
+    @media(max-width:1020px){
+        padding-bottom: 20px;
+    }
 }
 
 .paragraphs{
@@ -362,7 +391,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @media(max-width:880px){
+        @media(max-width:900px){
             &{
                 flex-direction: column;
             }
@@ -388,6 +417,21 @@
         }
     }
 
+    .email{
+        @media(max-width: 900px){
+            &{
+                width: 170px;
+            }
+        }
+        &__input{
+            @media(max-width:900px){
+                &{
+                    width: 140px;
+                }
+            }
+        }
+    }
+
     &__title{
         margin: 0;
         max-width: 525px;
@@ -401,7 +445,14 @@
                 max-width: 425px;
                 font-size: 22px;
                 text-align: center;
-                margin-bottom: 35px;
+            }
+        }
+        @media(max-width:900px){
+            &{
+                max-width: 425px;
+                font-size: 22px;
+                text-align: center;
+                margin-bottom: 15px;
             }
         }
         @media(max-width:480px){
@@ -446,12 +497,6 @@
         height: 100%;
         border: 0;
         outline: none;
-
-        @media(max-width:880px){
-            &{
-                width: 135px;
-            }
-        }
     }
 
     &__btn{
@@ -483,16 +528,15 @@
         }
     }
     &__wrapper{
-        justify-content: center;
         display: flex;
         overflow: hidden;
         flex-wrap: wrap;
     }
     .article-item{
-        max-width: 233px;
-        margin-right: 12px;
-        margin-bottom: 35px;
-
+        padding: 5px;
+        width: 233px;
+        margin-bottom: 15px;
+        flex: 1 0 auto;
 
         &__img-container{
             height: 170px;
@@ -520,12 +564,37 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media(max-width: 920px){
+            &{
+                align-items: flex-start;
+                justify-content: space-evenly;   
+            }
+        }
+        @media(max-width: 680px){
+            &{
+                flex-direction: column;   
+            }
+        }
     }
     &__link{
         font-weight: 600;
         font-size: 13px;
         color: $link-color;
         margin-right: 22px;
+
+        @media(max-width: 920px){
+            &{
+                margin-right: 0;
+                margin-bottom: 10px;       
+            }
+        }
+
+        @media(max-width: 680px){
+            &{
+                font-size: 14px;  
+            }
+        }
 
         i{
             font-size: 25px;
@@ -534,17 +603,34 @@
                 color: #3b5998;
             }
         }
-    }
 
-    @media(max-width:880px){
-        &{
-            display: none;
+        &-facebook{
+            @media(max-width: 920px){
+                &{
+                    display: none;       
+                }
+            }
         }
     }
+
+   .flex{
+        @media(max-width: 920px){
+            &{
+                flex-direction: column;
+                align-items: flex-start;       
+            }
+        }
+   }
 }
 
 .logo-container{
     margin-right: 30px;
+
+    @media(max-width: 920px){
+        &{ 
+            display: none;   
+        }
+    }
 }
 .logo{
     position: relative;
@@ -552,5 +638,5 @@
 }
 .flex{
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
