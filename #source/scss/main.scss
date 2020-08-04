@@ -217,10 +217,12 @@
             }
 
             .article-item__img-container{
+                min-height: 90%;
                 height: 527px;   /*Костыль с выравниванием картинок*/
             
                 @media(max-width:1020px){
                     &{
+                        min-height: none;
                         height: 214px;
                     }
                 }
