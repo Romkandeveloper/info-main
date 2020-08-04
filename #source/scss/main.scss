@@ -74,15 +74,19 @@
     }
 
     &__item{
-        text-transform: capitalize;
         font-weight: 300;
         font-size: 16px;
         display: inline-block;
         margin-right: 30px;
+        color: #828282;
+        transition: color .2s ease;
+        &:hover{
+            color: darken($color: #828282, $amount: 50%)
+        }
 
         &-icon{
             margin-right: 9px;
-            color: #828282;
+            color: inherit;
         }
     }
     &__buttons{
@@ -134,6 +138,10 @@
     color:  #BDBDBD;
     margin-left: 6px;
     font-size: 20px;
+
+    &:hover{
+        color: darken($color: #BDBDBD, $amount: 30%);
+    }
 }
 
 .lang{
@@ -145,9 +153,11 @@
         font-weight: 300;
         font-size: 12px;
         color: #000;
+        cursor: pointer;
 
         &_active{
             font-weight: bold;
+            cursor: initial;
         }
     }
 }
@@ -161,6 +171,7 @@
         border-radius: 10px 10px 0 0;
         outline: none;
         border: 0;
+        cursor: pointer;
 
         i{
             color: inherit;
@@ -172,6 +183,7 @@
             padding-left: 13px;
             background-color: #fff;
             color: #10DE50;
+            cursor: initial;
         }
     }
 }
@@ -316,6 +328,9 @@
         color: $description-color;
         font-weight: bold;
         font-size: 16px;
+        &:hover{
+            a{text-decoration: underline};
+        }
 
         @media(max-width:1020px){
             &{
@@ -328,6 +343,7 @@
     &__img-container{
         position: relative;
         overflow: hidden;
+        transition: box-shadow .5s ease;
 
         &:hover .article-item__img{
             transform: scale(1.1);
@@ -582,6 +598,10 @@
         font-size: 13px;
         color: $link-color;
         margin-right: 22px;
+        transition: color .2s ease;
+        &:hover{
+            color: darken($color: $link-color, $amount: 40%)
+        }
 
         @media(max-width: 920px){
             &{
